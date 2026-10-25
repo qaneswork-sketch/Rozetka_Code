@@ -17,4 +17,4 @@ jobs:
         with:
           token: ${{ secrets.ROZETKA_TESTS_PAT }}
           repository: qaneswork-sketch/Rozetka_Test
-          event-type: run-rozetka-tests
+          event-type: run-Rozetka_Code
