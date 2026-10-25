@@ -1,1 +1,20 @@
+name: Trigger Rozetka Playwright Tests
 
+on:
+  push:
+    branches: ["main"]
+
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  trigger-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger tests in Rozetka_Test
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.ROZETKA_TESTS_PAT }}
+          repository: qaneswork-sketch/Rozetka_Test
+          event-type: run-rozetka-tests
